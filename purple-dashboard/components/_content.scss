@@ -160,11 +160,10 @@
         background: $bg-light;
         border-radius: 16px;
 
-        opacity: 0;
-
         position: relative;
+        opacity: 0;
         top: 0;
-        // left: -50vw;
+        left: 0;
 
         transition: all .7s ease-in-out;
         -webkit-transition: all .7s ease-in-out;
@@ -172,8 +171,12 @@
         &.active {
             position: absolute;
             opacity: 1;
-            // left: 0;
-        }        
+        }    
+        
+        &.single {
+            position: relative;
+            opacity: 1;
+        }    
 
         th,
         td {

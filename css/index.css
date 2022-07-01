@@ -405,14 +405,19 @@ aside #toggle-navbar {
 .transaction-table {
   background: #fff;
   border-radius: 16px;
-  opacity: 0;
   position: relative;
+  opacity: 0;
   top: 0;
+  left: 0;
   transition: all 0.7s ease-in-out;
   -webkit-transition: all 0.7s ease-in-out;
 }
 .transaction-table.active {
   position: absolute;
+  opacity: 1;
+}
+.transaction-table.single {
+  position: relative;
   opacity: 1;
 }
 .transaction-table th,
