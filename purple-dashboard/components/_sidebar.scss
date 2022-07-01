@@ -20,12 +20,19 @@
 
 aside {
     background-color: $aside;
-    padding: 50px 0 50px 30px;
-    padding-bottom: 250px;
+    // padding: 50px 0 50px 30px;
+    padding: 50px 0;
+    padding-bottom: 60px;
 
     width: 290px;
     height: 100vh;
     overflow-y: scroll;
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
 
     position: fixed;
     top: 0;
@@ -104,6 +111,7 @@ aside {
             border-right: 3px solid $secondary;
 
             span {
+                font-weight: 500;
                 color: $text;
             }
 
@@ -130,16 +138,18 @@ aside {
             font-size: 18px;
             line-height: 27px;
             color: $text-light;
-            
+        }
 
+        &-container {
+            padding-left: 30px;
         }
     }
 }
 
 .topup- {
     &container {
-        padding-right: 30px;
-        margin-top: 60px;
+        padding: 0 30px;
+        margin-top: 50px;
     }
 
     &card {
@@ -157,6 +167,8 @@ aside {
         border-radius: 50%;
 
         overflow: hidden;
+
+        margin-right: 5px;
 
         
         img {

@@ -8,7 +8,8 @@ html, body {
   padding-bottom: 70px;
 }
 
-.btn-transaction, .nav-input, .nav-input-group .btn-nav-input, .topup-btn, #toggle-navbar {
+.btn-transaction,
+#tableTab .nav-link, .nav-input, .nav-input-group .btn-nav-input, .topup-btn, #toggle-navbar {
   background-color: transparent;
   border: none;
   outline: none;
@@ -46,11 +47,13 @@ html, body {
 
 aside {
   background-color: #fff;
-  padding: 50px 0 50px 30px;
-  padding-bottom: 250px;
+  padding: 50px 0;
+  padding-bottom: 60px;
   width: 290px;
   height: 100vh;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
   position: fixed;
   top: 0;
   right: -100vw;
@@ -58,6 +61,9 @@ aside {
   z-index: 2;
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
+}
+aside::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 aside #toggle-navbar {
   position: absolute;
@@ -115,6 +121,7 @@ aside #toggle-navbar {
   border-right: 3px solid #00BAFF;
 }
 .sidebar-item.active span {
+  font-weight: 500;
   color: #0C145A;
 }
 .sidebar-item.active svg path {
@@ -134,10 +141,13 @@ aside #toggle-navbar {
   line-height: 27px;
   color: #7E8CAC;
 }
+.sidebar-item-container {
+  padding-left: 30px;
+}
 
 .topup-container {
-  padding-right: 30px;
-  margin-top: 60px;
+  padding: 0 30px;
+  margin-top: 50px;
 }
 .topup-card {
   padding: 20px 30px;
@@ -150,6 +160,7 @@ aside #toggle-navbar {
   height: 50px !important;
   border-radius: 50%;
   overflow: hidden;
+  margin-right: 5px;
 }
 .topup-img img {
   width: 30px;
@@ -309,6 +320,7 @@ aside #toggle-navbar {
   padding: 30px;
   background: #fff;
   border-radius: 16px;
+  margin-bottom: 10px;
 }
 .statistics-img {
   border-radius: 50%;
@@ -406,14 +418,14 @@ aside #toggle-navbar {
   background: #fff;
   border-radius: 16px;
   position: relative;
-  opacity: 0;
+  opacity: 1;
   top: 0;
   left: 0;
   transition: all 0.7s ease-in-out;
   -webkit-transition: all 0.7s ease-in-out;
 }
 .transaction-table.active {
-  position: absolute;
+  position: relative;
   opacity: 1;
 }
 .transaction-table.single {
@@ -607,7 +619,15 @@ aside #toggle-navbar {
   }
 }
 
-.btn-transaction {
+#tableTab {
+  padding: 0px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border: none;
+}
+
+.btn-transaction,
+#tableTab .nav-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -623,16 +643,14 @@ aside #toggle-navbar {
   border-radius: 80px;
   margin-right: 18px;
 }
-.btn-transaction :hover {
+.btn-transaction :hover,
+#tableTab .nav-link :hover {
   text-decoration: none;
 }
-.btn-transaction.active {
+.btn-transaction.active,
+#tableTab .nav-link.active {
   background-color: #2B2467;
   color: #fff;
-}
-.btn-transaction-row {
-  margin-top: 30px;
-  margin-bottom: 20px;
 }
 
 .table {

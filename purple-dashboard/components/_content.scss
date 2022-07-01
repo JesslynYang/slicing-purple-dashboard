@@ -32,12 +32,12 @@
 
 .statistics- {
     &card {
-
        width: 100%;
        padding: 30px;
 
         background: $bg-light;
         border-radius: 16px;
+        margin-bottom: 10px;
     }
 
     &img {
@@ -161,7 +161,7 @@
         border-radius: 16px;
 
         position: relative;
-        opacity: 0;
+        opacity: 1;
         top: 0;
         left: 0;
 
@@ -169,7 +169,8 @@
         -webkit-transition: all .7s ease-in-out;
 
         &.active {
-            position: absolute;
+            // position: absolute;
+            position: relative;
             opacity: 1;
         }    
         
@@ -405,7 +406,15 @@
     }
 }
 
-.btn-transaction {
+#tableTab {
+    padding: 0px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border: none;
+}
+
+.btn-transaction,
+#tableTab .nav-link {
     @include button;
     @include flex-cc;
     
@@ -431,10 +440,6 @@
 
     }
 
-    &-row {
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
 }
 
 .table {
