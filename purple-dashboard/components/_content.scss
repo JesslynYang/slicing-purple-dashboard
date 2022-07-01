@@ -1,0 +1,447 @@
+.content {
+    padding: 10px 14px 24px 14px;
+    
+    
+    @include xl {
+        padding: 0px 64px 0px 0px;
+    }
+
+}
+
+.content- {
+    &title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: $text;
+
+        margin-bottom: 20px;
+    }
+
+    &title:first-of-type {
+        margin-top: 5px;
+    }
+
+    &desc {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 11px;
+        color: $text-light;
+    }
+}
+
+.statistics- {
+    &card {
+
+       width: 100%;
+       padding: 30px;
+
+        background: $bg-light;
+        border-radius: 16px;
+    }
+
+    &img {
+        border-radius: 50%;
+
+        width: 60px;
+        height: 60px;
+        background-color: $tertiary;
+
+        overflow: hidden;
+    
+    }
+
+    &title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: $text;
+    }
+
+    &value {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 33px;
+        color: $text;
+
+    }
+
+    &list {
+        margin-top: 50px;
+
+        @include flex-sc;
+
+    }
+
+    &image {
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+
+        &:not(:last-child) {
+            margin-right: -12px;
+        }
+    }
+
+    &icon {
+        @include flex-cc;
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+
+        span {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+        }
+
+        &:not(:last-child) {
+            margin-right: -12px;
+        }
+
+        &.award {
+            background: #F4F9EC;
+        }
+
+        &.box {
+            background: #ECE9FF;
+        }
+        
+        &.globe {
+            background: #ECF7F9;
+        }
+        
+        &.target {
+            background: #FFDDED;
+        }
+
+        &.one {
+            background: #ECE9FF;
+            color: #877AD8;
+        }
+
+        &.two {
+            background: #FFFBEC;
+            color: #FED54E;
+        }
+
+        &.three {
+            background: #ECF7F9;
+            color: #7AC9D8;
+        }
+
+        &.four {
+            background: #FEF6EC;
+            color: #F9AC44;
+        }
+
+        &.five {
+            background: #F4F9EC;
+            color: #9DC454;
+        }
+    }
+}
+
+.transaction- {
+    &row {
+        margin-top: 40px;
+    }
+
+    &table {
+        background: $bg-light;
+        border-radius: 16px;
+
+        opacity: 0;
+
+        position: relative;
+        top: 0;
+        // left: -50vw;
+
+        transition: all .7s ease-in-out;
+        -webkit-transition: all .7s ease-in-out;
+
+        &.active {
+            position: absolute;
+            opacity: 1;
+            // left: 0;
+        }        
+
+        th,
+        td {
+            min-width: 120px;
+
+            @include md {
+                min-width: 0;
+            }
+        }
+
+        th {
+            width: 23%;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+
+            color: $text;
+        }
+
+        th:first-child {
+            width: auto;
+
+            @include lg {
+                width: 50%;
+            }
+        }
+
+        th.status-header {
+            width: 10%;
+            padding: 0px 10px 0px 0px;
+
+            @include md {
+                padding: 10px 30px 10px 20px;
+            }
+        }
+
+        th.status-header:not(:last-child) {
+            padding: 10px 30px 10px 0;
+        }
+
+        th.action-header,
+        td.action {
+            width: 5%;
+        }
+
+        th:not(:first-child),
+        th:not(:last-child),
+        td:not(:first-child),
+        td:not(:last-child) {
+
+            @include sm {
+                padding-right: 50px;
+            }
+            @include md {
+                padding-right: 50px;
+            }
+
+            @include lg {
+                padding-right: 60px;
+            }
+        }
+
+        th.action-header,
+        td.action {
+            padding-right: 0;
+        }
+
+
+        td {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+
+            color: $text;
+
+            overflow: hidden;
+
+            &.status {
+                width: 5%;
+                padding: 10px 30px 10px 0px;
+    
+                span {
+                    float: left;
+                }
+    
+                @include md {
+                    width: 8%;
+                }
+            }
+
+            &.action {
+                width: 5%;
+                padding: 0px;
+
+                @include md {
+                    padding: 0 30px;
+                }
+            }
+
+            &.status,
+            &.action {
+                vertical-align: middle;
+            }
+            
+            
+            span {
+                position: relative;
+                text-align: center;
+
+                margin: 0 auto;
+
+                &.pending {
+                    &::before {
+                        color: $pending;
+                    }
+                }
+
+                &.success {
+                    &::before {
+                        color: $success;
+                    }
+                }
+
+                &.failed {
+                    &::before {
+                        color: $failed;
+                    }
+                }
+
+                &::before {
+                    content: ".";
+                    color: black;
+                    text-align: end;
+                    line-height: 0px;
+                    font-size: 45px;
+                    margin-right: 5px;
+    
+                    border-radius: 50%;
+                }
+            }
+
+        }
+
+        th:first-child {
+            padding: 20px 30px;
+        }
+
+        td:first-child {
+            padding: 10px 0px 10px 30px;
+        }
+
+        th:not(:first-child) {
+            text-align: center;
+        }
+
+    }
+
+    &img {
+        width: 80px;
+        height: 60px;
+        border-radius: 15px;
+        margin-right: 16px;
+    }
+
+    &game {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: start;
+        color: $text;
+    
+    }
+    
+
+    &type {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $text-light;
+    }
+}
+
+.status- {
+    &light {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+
+
+        &.pending {
+            background-color: $pending;
+        }
+
+        &.success {
+            background-color: $success;
+        }
+
+        &.failed {
+            background-color: $failed;
+        }
+    }
+}
+
+.transaction- {
+    &title {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+
+        color: $text-light;
+    }
+
+    &value {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 52px;
+
+        color: $text;
+
+        @include md {
+            font-size: 42px;
+            line-height: 63px;
+        }
+
+    }
+}
+
+.btn-transaction {
+    @include button;
+    @include flex-cc;
+    
+    font-weight: 400;
+    font-size: 14.4px;
+    line-height: 22px;
+    text-align: center;
+    margin-bottom: 8px;
+
+    
+    width: 112px;
+    height: 40px;
+    
+    background: $text-secondary;
+    color: $text;
+    border-radius: 80px;
+
+    margin-right: 18px;
+    
+    &.active {
+        background-color: $bg-secondary;
+        color: $bg-light;
+
+    }
+
+    &-row {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+.table {
+    border: none;
+    th,
+    td {
+        vertical-align: middle;
+    }
+
+    &-responsive {
+        position: relative;
+    }
+}

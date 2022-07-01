@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+$primary: #4D17E2;
+$secondary: #00BAFF;
+$tertiary: #D7D7F8;
+$bg: #FBFCFD;
+$bg-light: #fff;
+$bg-secondary: #2B2467;
+$text: #0C145A;
+$text-light: #7E8CAC;
+$text-secondary: #E7EAF5;
+$aside: #fff;
+$default: transparent;
+
+$pending: #FEBD57;
+$success: #1ABC9C;
+$failed: #FE5761;
+
+
+html, body {
+    font-family: 'Poppins';
+    font-style: normal;
+    background-color: $bg;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+@mixin flex-sc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-bc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%utility-reset {
+    background-color: $default;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+@mixin button {
+    @extend %utility-reset;
+    
+    :hover {
+        text-decoration: none;
+    }
+}
+
+@mixin input {
+    @extend %utility-reset
+}
+
+.screen-cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .4);
+
+    display: block;
+    z-index: 2;
+
+}

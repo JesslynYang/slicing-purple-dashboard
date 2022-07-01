@@ -1,0 +1,199 @@
+#toggle-navbar {
+    @include button;
+    margin-right: 15px;
+    display: block;
+
+    @include xl {
+        display: none;
+    }
+
+}
+
+.col-navbar {
+    &.appear {
+        aside {
+            right: 0;
+            opacity: 1;
+        }
+    }
+}
+
+aside {
+    background-color: $aside;
+    padding: 50px 0 50px 30px;
+    padding-bottom: 250px;
+
+    width: 290px;
+    height: 100vh;
+    overflow-y: scroll;
+
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    opacity: 0;
+
+    z-index: 2;
+
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+
+    #toggle-navbar {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+
+        @include xl {
+            display: none;
+        }
+    }
+
+    @include xl {
+        right: 0;
+        left: 0;
+        opacity: 1;
+    }
+
+}
+
+.profile- {
+    &img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &name {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        color: $text;
+
+        margin-top: 20px;
+    }
+
+    &email {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        
+        color: $text-light;
+        margin-bottom: 50px;
+    }
+}
+
+
+.sidebar- {
+    &item {
+        text-decoration: none;
+        display: block;
+
+        background: $default;
+        height: 30px;
+
+        padding: 0 11px;
+
+        margin-bottom: 30px;
+
+        @include flex-sc;
+
+        &.active {
+            border-right: 3px solid $secondary;
+
+            span {
+                color: $text;
+            }
+
+            svg {
+                
+                path {
+                    stroke: $primary;
+                }
+            }
+        }
+
+        svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 20px;
+            path {
+                stroke: $text-light;
+            }
+        }
+
+
+        span {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            color: $text-light;
+            
+
+        }
+    }
+}
+
+.topup- {
+    &container {
+        padding-right: 30px;
+        margin-top: 60px;
+    }
+
+    &card {
+        padding: 20px 30px;
+        background: #F9FAFF;
+        border-radius: 16px;
+    }
+
+    &img {
+        background-color: $tertiary;
+
+        width: 50px !important;
+        height: 50px !important;
+
+        border-radius: 50%;
+
+        overflow: hidden;
+
+        
+        img {
+            width: 30px;
+            height: 41px;
+        }
+    }
+
+    &title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: $text;
+
+    }
+
+    &btn {
+        @include button;
+        @include flex-cc;
+
+        padding: 8px 17px;
+
+        background-color: $primary;
+
+        font-weight: 500;
+        font-size: 11.16px;
+        line-height: 17px;
+        text-align: center;
+        
+        color: $bg-light;
+        border-radius: 62px;
+
+        margin-top: 20px;
+        
+        &:hover {
+            color: $bg-light;
+        }
+    }
+}

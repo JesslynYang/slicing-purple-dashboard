@@ -1,0 +1,103 @@
+.col-navbar {
+    transition: 1s;
+}
+
+.nav {
+    @include flex-bc;
+    flex-wrap: wrap;
+
+    padding: 50px 14px 24px 14px;
+    
+    
+    @include md {
+        flex-wrap: nowrap;
+    }
+    
+    @include xl {
+        padding: 50px 64px 24px 0px;
+    }
+
+    #toggle-navbar {
+        border-radius: 50%;
+        overflow: hidden;
+
+        padding: 4px;
+
+        border: 2px solid $primary;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+}
+
+.nav- {
+    &title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px;
+        color: $text;
+
+    }
+
+    &input-container {
+        width: 100%;
+        
+        @include md {
+            width: auto;
+        }
+    }
+
+    &input-group {
+        @include flex-bc;
+
+        height: 46px;
+        padding: 0 18px;
+
+        width: 100%;
+
+        background: $bg-light;
+        border-radius: 100px;
+
+        .btn-nav-input {
+            @include button;
+            width: auto;
+        }
+
+        @include md {
+            width: 400px !important;
+        } 
+
+        @include lg {
+            width: 400px;
+        } 
+
+        @include xl {
+            width: 500px;
+        } 
+    }
+
+    &input {
+        @include flex-sc;
+        @include input;
+
+        font-style: italic;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+
+        color: $secondary;
+
+        width: 100%;
+
+
+        @include sm {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+    }
+}
